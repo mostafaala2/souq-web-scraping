@@ -1,4 +1,4 @@
-import requests x x
+import requests y
 import urllib.request
 import time
 from PIL import Image
