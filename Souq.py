@@ -9,7 +9,7 @@ from io import BytesIO
 
 filecsv = open('SouqDataapple.csv', 'w',encoding='utf8')
 # Set the URL you want to webscrape from
-
+#xyz
 url = 'https://egypt.souq.com/eg-en/samsung/p/?section=2&page='
 
 csv_columns = ['name','EAN-13','Item EAN','Brand','Type','price','Size','descreption','img']
