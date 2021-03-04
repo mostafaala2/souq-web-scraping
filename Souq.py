@@ -23,14 +23,7 @@ for page in range(10):
     soup = BeautifulSoup(r.content, "html.parser")
     ancher=soup.find_all('div',{'class' : 'column column-block block-grid-large single-item'})
 
-    for pt in  ancher:
-
-           
-            
-            
-            
-            
-            
+    for pt in  ancher:        
             
         a_tag = pt.find('a', href=True)
         href = a_tag['href'] # get the href attribute
