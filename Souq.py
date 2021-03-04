@@ -93,7 +93,4 @@ for page in range(10):
         urllib.request.urlretrieve(src, str(prod) + ".jpg")
         prod = prod + 1
         print(prod)
-
-
-
 filecsv.close()
