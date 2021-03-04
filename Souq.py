@@ -82,26 +82,17 @@ for page in range(10):
         Item_EAN= dictionary_of_info['Item EAN'],
 
         if Size != None:
-            s = Size.text.replace('                    ', '').strip('\r\n')
+            s = Size.text.replace('', '').strip('\r\n')
 
         writer.writerow(
-            {'name': name.text.replace('                    ', '').strip('\r\n'), 'price': itemPrice.text, 'Size': s,
-             'descreption': descreption.text.replace('                    ', '').strip('\r\n'), 'img': str(prod)+".jpg",
+            {'name': name.text.replace('', '').strip('\r\n'), 'price': itemPrice.text, 'Size': s,
+             'descreption': descreption.text.replace(' ', '').strip('\r\n'), 'img': str(prod)+".jpg",
              'EAN-13': EAN, 'Brand': Brand[0], 'Item EAN': Item_EAN[0],
              'Type': Type})
-
-
-
         # urllib.request.urlretrieve(img.get('src'), itemPrice.text+".jpg")
         urllib.request.urlretrieve(src, str(prod) + ".jpg")
         prod = prod + 1
         print(prod)
-
-
-
-
-
-
 
 
 
