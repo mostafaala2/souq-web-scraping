@@ -88,7 +88,7 @@ for page in range(10):
              'descreption': descreption.text.replace(' ', '').strip('\r\n'), 'img': str(prod)+".jpg",
              'EAN-13': EAN, 'Brand': Brand[0], 'Item EAN': Item_EAN[0],
              'Type': Type})
-        # urllib.request.urlretrieve(img.get('src'), itemPrice.text+".jpg")
+        # urllib.request.urlretrieve(img.get('src'), itemPrice.text+".jpg")----
         urllib.request.urlretrieve(src, str(prod) + ".jpg")
         prod = prod + 1
         print(prod)
