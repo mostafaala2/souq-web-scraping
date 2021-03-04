@@ -25,7 +25,13 @@ for page in range(10):
 
     for pt in  ancher:
 
-
+           
+            
+            
+            
+            
+            
+            
         a_tag = pt.find('a', href=True)
         href = a_tag['href'] # get the href attribute
         name=pt.find('h6', {'class' : 'title itemTitle'})
