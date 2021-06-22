@@ -7,7 +7,7 @@ from bs4 import BeautifulSoup
 import json
 import csv
 from io import BytesIO
-
+10
 filecsv = open('SouqDataapple.csv', 'w',encoding='utf8')
 # Set the URL you want to webscrape from
 #xyz
