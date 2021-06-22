@@ -7,10 +7,10 @@ from bs4 import BeautifulSoup
 import json
 import csv
 from io import BytesIO
-11
+10
 filecsv = open('SouqDataapple.csv', 'w',encoding='utf8')
 # Set the URL you want to webscrape from
-
+#xyz
 url = 'https://egypt.souq.com/eg-en/samsung/p/?section=2&page='
 
 csv_columns = ['name','EAN-13','Item EAN','Brand','Type','price','Size','descreption','img']
@@ -23,9 +23,8 @@ for page in range(10):
     soup = BeautifulSoup(r.content, "html.parser")
     ancher=soup.find_all('div',{'class' : 'column column-block block-grid-large single-item'})
 
-    for pt in  ancher:
-
-
+    for pt in  ancher:        
+            
         a_tag = pt.find('a', href=True)
         href = a_tag['href'] # get the href attribute
         name=pt.find('h6', {'class' : 'title itemTitle'})
@@ -82,27 +81,15 @@ for page in range(10):
         Item_EAN= dictionary_of_info['Item EAN'],
 
         if Size != None:
-            s = Size.text.replace('                    ', '').strip('\r\n')
+            s = Size.text.replace('', '').strip('\r\n')
 
         writer.writerow(
-            {'name': name.text.replace('                    ', '').strip('\r\n'), 'price': itemPrice.text, 'Size': s,
-             'descreption': descreption.text.replace('                    ', '').strip('\r\n'), 'img': str(prod)+".jpg",
+            {'name': name.text.replace('', '').strip('\r\n'), 'price': itemPrice.text, 'Size': s,
+             'descreption': descreption.text.replace(' ', '').strip('\r\n'), 'img': str(prod)+".jpg",
              'EAN-13': EAN, 'Brand': Brand[0], 'Item EAN': Item_EAN[0],
              'Type': Type})
-
-
-
-        # urllib.request.urlretrieve(img.get('src'), itemPrice.text+".jpg")
+        # urllib.request.urlretrieve(img.get('src'), itemPrice.text+".jpg")----
         urllib.request.urlretrieve(src, str(prod) + ".jpg")
         prod = prod + 1
         print(prod)
-
-
-
-
-
-
-
-
-
 filecsv.close()
